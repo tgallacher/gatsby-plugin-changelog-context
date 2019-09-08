@@ -55,7 +55,7 @@ and add the plugin to your config file:
 module.exports = {
   ...
   plugins: [
-    'gatsby-plugin-remove-generator',
+    'gatsby-plugin-changelog-context',
   ]
 };
 ```
