@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-plugin-changelog-context",
+  "version": "0.0.0-development",
+  "author": "Tom Gallacher <tgallacher@users.noreply.github.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "lint": "eslint \".\"",
+    "prepack": "cp src/*.js .",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgallacher/gatsby-plugin-changelog-context.git"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "peerDependencies": {
+    "gatsby": "2.x.x"
+  },
+  "dependencies": {
+    "simple-git": "^1.126.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "conventional-changelog-cli": "^2.0.23",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.2",
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.21"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
