@@ -22,13 +22,13 @@ jobs:
       script:
         - yarn lint
         - yarn test
-    - stage: release
-      node_js: lts/*
-      script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          # - yarn semantic-release
-      on:
-        branch: master
+    # - stage: release
+    #   node_js: lts/*
+    #   script: skip
+    #   deploy:
+    #     provider: script
+    #     skip_cleanup: true
+    #     script:
+    #       - yarn semantic-release
+    #   on:
+    #     branch: master
