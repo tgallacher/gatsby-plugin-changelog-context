@@ -123,10 +123,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 };
 ```
 
-The `changelog` prop has the following type signature:
+The `changelog` _pageContext_ prop has the following type signature:
 
 ```ts
-type ChangeLog = Commit[]; // Empty array, or array of Commit objects
+const changelog: Commit[]; // Empty array, or array of Commit objects
 
 // Commit object
 interface Commit {
