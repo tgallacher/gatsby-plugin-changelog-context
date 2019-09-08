@@ -23,7 +23,6 @@ Each page's commit history is added to your page templates via the [page context
   - [Add Plugin to GatsbyJS Site](#add-plugin-to-gatsbyjs-site)
   - [Adding Filesystem Data to your Page Query](#adding-filesystem-data-to-your-page-query)
 - [Usage](#usage)
-- [Options](#options)
 - [Credit](#credit)
 
 <!-- /TOC -->
@@ -139,28 +138,6 @@ interface Commit {
   author_email: string;
   refs: string;
 }
-```
-
-## Options
-
-Pass supported options to the plugin to modify the default behaviour.
-
-```js
-// gatsby-config.js
-module.exports = {
-  ...
-  plugins: [
-    {
-      resolve: 'gatsby-plugin-remove-generator',
-      options: {
-        // Only remove the Gatsby version number instead of the whole node
-        removeVersionOnly: true,
-        // Customise the generator string altogether.
-        // Note: This has the highest precedence of the available options.
-        content: 'Custom string'
-      },
-  ]
-};
 ```
 
 ## Credit
