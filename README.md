@@ -107,9 +107,9 @@ data.allMarkdownRemark.edges.forEach(post => {
 
 The following options are supported:
 
-| Option key | type     | Description                                                                                                                                     |
-| ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| git        | `object` | Options to be passed to the `git` CLI, e.g. `--date`. See the [git log](https://git-scm.com/docs/git-log) docs for details of available options |
+| key |   type   |                                                                   Description                                                                   |
+| :-: | :------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
+| git | `object` | Options to be passed to the `git` CLI, e.g. `--date`. See the [git log](https://git-scm.com/docs/git-log) docs for details of available options |
 
 #### Example
 
