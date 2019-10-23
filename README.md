@@ -22,6 +22,8 @@ Each page's commit history is added to your page templates via the [page context
   - [Add Dependency](#add-dependency)
   - [Add Plugin to GatsbyJS Site](#add-plugin-to-gatsbyjs-site)
   - [Adding Filesystem Data to your Page Query](#adding-filesystem-data-to-your-page-query)
+  - [Options](#options)
+    - [Example](#example)
 - [Usage](#usage)
 - [Credit](#credit)
 
@@ -31,7 +33,7 @@ Each page's commit history is added to your page templates via the [page context
 
 This Gatsby plugin requires the location of each page with respect to the filesystem, as stored in git; This is to ensure we get the correct/relevant commit history for the page from git.
 
-This is easy to add to a typical Gatsby setup, assuming you are using Gatsby with GraphQL. How to add this data is provided in more detail [below](<(#adding-filesystem-data-to-your-page-query)>).
+This fits with a common workflow in a typical Gatsby setup, when programmatically generating pages. How to add this data is provided in more detail [below](<(#adding-filesystem-data-to-your-page-query)>).
 
 ## Install
 
@@ -99,6 +101,35 @@ data.allMarkdownRemark.edges.forEach(post => {
     },
   });
 });
+```
+
+### Options
+
+The following options are supported:
+
+| Option key | type     | Description                                                                                                                                     |
+| ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| git        | `object` | Options to be passed to the `git` CLI, e.g. `--date`. See the [git log](https://git-scm.com/docs/git-log) docs for details of available options |
+
+#### Example
+
+As an example, to configure the commit date format to be a _unix_ timestamp (the default is ISO8601):
+
+```js
+// gatsby-config.js
+module.exports = {
+  ...
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-changelog-context',
+      options: {
+        git: {
+          '--date': 'unix',
+        },
+      },
+    },
+  ]
+};
 ```
 
 ## Usage
