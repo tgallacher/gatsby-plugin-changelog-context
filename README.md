@@ -13,7 +13,7 @@ Automate adding a changelog of commit history to your Gatsby -generated pages.
 
 ---
 
-Each page's commit history is added to your page templates via the [page context](https://www.gatsbyjs.org/docs/gatsby-internals-terminology/#pagecontext). This then gives you the ability to display/consume this data within your page template however you like.
+Get access to a given page's commit history directly from your page template's [page context](https://www.gatsbyjs.org/docs/gatsby-internals-terminology/#pagecontext). This gives you the ability to display/consume this data within your page template however you like.
 
 <!-- TOC -->
 
@@ -25,6 +25,7 @@ Each page's commit history is added to your page templates via the [page context
   - [Options](#options)
     - [Example](#example)
 - [Usage](#usage)
+- [Blog Post](#blog-post)
 - [Credit](#credit)
 
 <!-- /TOC -->
@@ -134,7 +135,7 @@ module.exports = {
 
 ## Usage
 
-The commit history for each page is accessed from the page template's `pageContext`. In the above example, which uses a page template, called `blogPostTemplate`, we can access the commit history via the `props.pageContext.changelog`:
+The commit history for each page is accessed from the page template's `pageContext`. In the above example, which uses a page template called `blogPostTemplate`, we can access the commit history via the `props.pageContext.changelog`:
 
 ```jsx
 const BlogPostTemplate = ({ data, pageContext }) => {
@@ -157,12 +158,12 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 The `changelog` _pageContext_ prop has the following type signature:
 
 ```ts
-const changelog: Commit[]; // Empty array, or array of Commit objects
+const changelog: Commit[];
 
-// Commit object
+// Single commit
 interface Commit {
   hash: string; // commit hash
-  data: string; // ISO datetime
+  date: string; // datetime (this will be ISO8601 unless configured using the above `git` options)
   message: string; // commit summary
   body: string; // commit body
   author_name: string;
@@ -170,6 +171,10 @@ interface Commit {
   refs: string;
 }
 ```
+
+## Blog Post
+
+If you want know a bit more about under the hood, I wrote a [blog post](https://tom-gallacher.co.uk/articles/automating-changelogs-using-gatsby/) about this plugin.
 
 ## Credit
 
