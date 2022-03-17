@@ -22,7 +22,7 @@
     "gatsby": "2.x.x"
   },
   "dependencies": {
-    "simple-git": "^1.126.0"
+    "simple-git": "^3.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
